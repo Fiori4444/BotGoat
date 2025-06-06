@@ -8,9 +8,13 @@ load_dotenv()  # charge les variables depuis un fichier .env s'il existe
 
 bot = discord.Client(intents=discord.Intents.all()) 
 
-ID_DU_GOAT = 239746340559650816
+#ID_DU_GOAT = 239746340559650816
 
-ID_DU_DOG = 216143911314391042
+#ID_DU_DOG = 216143911314391042
+
+ID_DU_GOAT = 563434444321587202
+
+ID_DU_DOG = 663792637094133790
 
 @bot.event
 async def on_ready():
