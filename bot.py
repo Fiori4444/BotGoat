@@ -33,15 +33,9 @@ intents.members = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-#bot = discord.Client(intents=discord.Intents.all()) 
+ID_DU_GOAT = 239746340559650816
 
-#ID_DU_GOAT = 239746340559650816
-
-#ID_DU_DOG = 216143911314391042
-
-ID_DU_GOAT = 563434444321587202
-
-ID_DU_DOG = 663792637094133790
+ID_DU_DOG = 216143911314391042
 
 @bot.event
 async def on_ready():
