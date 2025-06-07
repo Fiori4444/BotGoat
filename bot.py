@@ -1,4 +1,5 @@
 import discord
+from discord.ext import commands
 import time
 import os
 
@@ -25,11 +26,22 @@ def home():
 from dotenv import load_dotenv
 load_dotenv()  # charge les variables depuis un fichier .env s'il existe
 
-bot = discord.Client(intents=discord.Intents.all()) 
+intents = discord.Intents.default()
+intents.voice_states = True
+intents.guilds = True
+intents.members = True 
 
-ID_DU_GOAT = 239746340559650816
+bot = commands.Bot(command_prefix='!', intents=intents)
 
-ID_DU_DOG = 216143911314391042
+#bot = discord.Client(intents=discord.Intents.all()) 
+
+#ID_DU_GOAT = 239746340559650816
+
+#ID_DU_DOG = 216143911314391042
+
+ID_DU_GOAT = 563434444321587202
+
+ID_DU_DOG = 663792637094133790
 
 @bot.event
 async def on_ready():
@@ -42,7 +54,7 @@ async def on_voice_state_update(member, before, after):
         if member.id == ID_DU_GOAT:
             channel = after.channel
             for m in channel.members:
-                if m.id != ID_DU_GOAT and not m.bot and m.id == ID_DU_DOG:
+                if m.id == ID_DU_DOG:
                     try:
                         await m.edit(mute=True)
                         print(f'Muselière appliquée: {m.name}')
