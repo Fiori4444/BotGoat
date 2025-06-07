@@ -2,13 +2,24 @@ import discord
 import time
 import os
 
-# host bullshit
+# HOST HEALTH BULLSHIT
+
+import threading
 from flask import Flask
 
 app = Flask('')
 
 def run():
     app.run(host='0.0.0.0', port=8080)
+
+threading.Thread(target=run).start()
+
+@app.route('/')
+def home():
+    return 'OK', 200
+
+
+# BOT
 
 # Pour charger les variables d'environnement depuis un fichier .env
 from dotenv import load_dotenv
