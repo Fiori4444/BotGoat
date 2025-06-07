@@ -2,6 +2,15 @@ import discord
 import time
 import os
 
+# host bullshit
+from flask import Flask
+
+app = Flask('')
+
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
 # Pour charger les variables d'environnement depuis un fichier .env
 from dotenv import load_dotenv
 load_dotenv()  # charge les variables depuis un fichier .env s'il existe
